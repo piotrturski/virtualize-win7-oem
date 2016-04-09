@@ -42,9 +42,12 @@ one way is:
   * If you're afraid of accidentally deleting wrong partition, you can 
   [backup your partition table](http://unix.stackexchange.com/a/12988)     
 
-1. Verify your installation media is original and not corrupted
+1. Verify your installation media is original and not corrupted:
  * you can find hashes on the 
  [official msdn page](https://msdn.microsoft.com/en-us/subscriptions/downloads/#searchTerm=&ProductFamilyId=350&Architectures=x64&ProductFamilyIds=350&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0)
+ * or, if your file's sha1 is included in this repo, from the dir with your image do:
+ 
+   ```curl https://raw.githubusercontent.com/piotrturski/virtualize-win7-oem/master/sums.sha1 | grep -wF "`ls`" | sha1sum -c```
 1. Install windows inside the VM and activate it in a standard way using your product key
    
 ## Standard legal bullshit
